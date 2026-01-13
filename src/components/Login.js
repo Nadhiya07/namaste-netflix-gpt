@@ -23,13 +23,11 @@ const Login = () => {
     setSignedIn(!signedIn);
   };
   const handleButtonClick = () => {
-    console.log("Sign In clicked", email.current.value, password.current.value);
     const errorMsg = checkAndValidateData(
       email.current.value,
       password.current.value
     );
     setErrorMessage(errorMsg);
-    console.log("Validation Result:", errorMsg);
     if (errorMessage) return;
     if (!signedIn) {
       createUserWithEmailAndPassword(
